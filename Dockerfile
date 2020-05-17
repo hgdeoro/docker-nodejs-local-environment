@@ -33,6 +33,10 @@ RUN groupadd \
 # RUN chown -R ${NODE_USER_ID}.${NODE_GROUP_ID} /usr/local/lib/node_modules
 # RUN chown -R ${NODE_USER_ID}.${NODE_GROUP_ID} /usr/local/bin
 
+RUN mkdir -p /srv/.npm && chown -R ${NODE_USER_ID}.${NODE_GROUP_ID} /srv/.npm
+
+ENV npm_config_cache=/srv/.npm
+
 USER ${NODE_USER_NAME}
 
 CMD ["/bin/bash"]

@@ -37,7 +37,7 @@ run:
 		$(DOCKER_RUN_INTERACTIVE) \
 		$(DOCKER_NETWORK) \
 		--mount type=bind,source=$(WORKDIR),target=$(WORKDIR) \
-		--mount type=bind,source=$${HOME}/.npm,target=$(WORKDIR)/.npm \
+		--mount type=bind,source=$${HOME}/.npm,target=/srv/.npm \
 		--workdir $(WORKDIR) \
 		-e HOME=$(WORKDIR) \
 		-e PATH=$(INITIAL_PATH):$(WORKDIR)/node_modules/.bin \
