@@ -33,7 +33,8 @@ build:
 run:
 	docker run \
 		--init \
-		--rm $(DOCKER_RUN_INTERACTIVE) \
+		--rm \
+		$(DOCKER_RUN_INTERACTIVE) \
 		$(DOCKER_NETWORK) \
 		--mount type=bind,source=$(WORKDIR),target=$(WORKDIR) \
 		--mount type=bind,source=$${HOME}/.npm,target=$(WORKDIR)/.npm \
